@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="./New folder/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="./about.css">
+  <title>Contact Us</title>
+</head>
+
+<body>
+  <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="./index.html"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <img src="./Images/logo.png" class="bi me-2" width="69"></img>
+        <span class="fs-4"></span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="./index.html" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="./pricing.html" class="nav-link">Pricing</a></li>
+        <li class="nav-item"><a href="./FAQ.html" class="nav-link">FAQs</a></li>
+        <li class="nav-item"><a href="./about_us.html" class="nav-link">Contact Us</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <h1 class="display-4 fw-normal text-body-emphasis">Contact Us</h1>
+
+  <body>
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 mr-auto">
+            <h2>Hi</h2>
+            <p class="mb-5 paragraph">Feel free to reach out to us, send your views, concerns or requests through the
+              contact form on the right and we will try to provide you with the help you need with the best of our
+              capability.</p>
+            <ul class="list-unstyled pl-md-5 mb-5">
+              <li class="d-flex text-black mb-2">
+                <span class="mr-3"><span class="icon-map"></span></span>Sinhgad Campus, Ambegaon BK.<br> Pune-411046,
+                Maharastra, <br> India
+              </li>
+              <li class="d-flex text-black mb-2"><span class="mr-3"><span class="icon-phone"></span></span> +91
+                7822005394
+                <br> +91 9022232168
+
+                <!-- <li class="d-flex text-black"><span class="mr-3"><span class="icon-envelope-o"></span></span>
+                info@mywebsite.com </li> -->
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <form class="mb-5" method="post" id="contactForm" name="contactForm" novalidate="novalidate">
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="name" class="col-form-label">Name</label>
+                  <input type="text" class="form-control" name="name" id="name">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="email" class="col-form-label">Email</label>
+                  <input type="text" class="form-control" name="email" id="emailid">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="message" class="col-form-label">Message</label>
+                  <textarea class="form-control" name="message" id="msgContent" cols="30" rows="7"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <input type="submit" value="Send Message" id="msgContent"
+                    class="btn btn-primary rounded-0 py-2 px-4 mt-3">
+                  <span class="submitting"></span>
+                </div>
+              </div>
+            </form>
+            <div class="alert " id="">Your message was sent successfully!</div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+  </body>
+
+  <br><br><br><br><br>
+  <footer class="pb-4">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+
+    <ul class="social_icon">
+      <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+      <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+      <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+      <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+    </ul>
+
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="./firebase.js"></script>
+</body>
+
+
+</html>
