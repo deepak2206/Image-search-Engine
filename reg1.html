@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="auth.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="./Images/logo.png" class="bi me-2" width="69" ></img>
+          <span class="fs-4"></span>
+        </a>
+  
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="./pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="./FAQ.html" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="./about_us.html" class="nav-link">Contact Us</a></li>
+          <li class="nav-item" id="signoutbutton"><a href="./auth1.html" class="nav-link">Sign Out</a></li>
+        </ul>
+      </header>
+    </div>
+
+    <form action="" id="MainForm">
+        <div class="container2">
+            <h2>Create an Account</h2>
+            <form action="" method="post">
+            <input type="email" name="email" id="emailInp" placeholder="E-mail" required>
+            <input type="password" name="password" id="passwordInp" placeholder="Password" required>
+            <input type="text" id="fName" placeholder="FirtName">
+            <input type="text" id="lName" placeholder="LastName">
+            <input type="submit" id="login" value="Create Account">
+            <button> <a href="auth1.html"> Already have an Account? </a></button>
+            <!-- <a href="#"><button>ceate new Acount</button></a> -->
+        </div>
+    </form>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+      import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+    
+      document.addEventListener('DOMContentLoaded', () =>{
+          const firebaseConfig = {
+          apiKey: "AIzaSyAyFIbO8dX_J0A_vXJLgMJc2AnLltbEAqw",
+          authDomain: "contactus-form-63ba0.firebaseapp.com",
+          databaseURL: "https://contactus-form-63ba0-default-rtdb.firebaseio.com",
+          projectId: "contactus-form-63ba0",
+          storageBucket: "contactus-form-63ba0.appspot.com",
+          messagingSenderId: "522993897899",
+          appId: "1:522993897899:web:5dcaf1c523c08d9efc42ee"
+          };
+      })
+    
+      const app = firebase.initializeApp(firebaseConfig);
+      const db = firebase.getDatabase();
+      const auth = firebase.getAuth(app);
+    
+      let EmailInp = document.getElementById('emailInp')
+      let PassInp = document.getElementById('passwordInp')
+      let FName = document.getElementById('fName')
+      let LName = document.getElementById('LName')
+      let MainForm = document.getElementById('MainForm')
+    
+      let registerUser= evt => {
+          evt.preventDefault();
+    
+          createUserWithEmailAndPassword(auth, EmailInp.value, PassInp.value)
+          .then((credentials)=>{
+              set(ref(db, 'usersAuthList/' + credentials.user.uid), {
+                  firstName: FName.value,
+                  lastName: LName.value 
+              })
+          })
+          .catch((error)=>{
+              alert(error.message);
+              console.log(error.code);
+              console.log(error.message);
+          })
+      }
+     
+      MainForm.addEventListener('submit', registerUser)
+    
+    
+    </script>
+</body>
+</html>

@@ -22,6 +22,7 @@
             <li class="nav-item"><a href="./pricing.html" class="nav-link">Pricing</a></li>
             <li class="nav-item"><a href="./FAQ.html" class="nav-link">FAQs</a></li>
             <li class="nav-item"><a href="./about_us.html" class="nav-link">Contact Us</a></li>
+            <li class="nav-item" id="signoutbutton"><a href="./auth1.html" class="nav-link">Sign Out</a></li>
           </ul>
         </header>
       </div>
@@ -67,6 +68,29 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="main.js"></script>
+    <!-- <script>
+      let UserCreds = JSON.parse(sessionStorage.getItem('user-cred'));
+      let UserInfo = JSON.parse(sessionStorage.getItem('user-info'));
+
+      let SignOut = () =>{
+        sessionStorage.removeItem('user-creds');
+        sessionStorage.removeItem('user-info');
+        window.location.href = 'auth1.html';
+      }
+
+      let CheckCred = () =>{
+        if(!sessionStorage.getItem('user-creds'))
+          window.location.href = 'auth1.html';
+
+        else{
+          console.log(UserCreds.email);
+        }
+      }
+      window.addEventListener('load', CheckCred);
+      SignoutBtn.addEventListener('Click', SignOut) -->
+
+      
+    <!-- </script> -->
 </body>
 </html>
 
